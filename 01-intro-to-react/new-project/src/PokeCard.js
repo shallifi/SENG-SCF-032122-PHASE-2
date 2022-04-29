@@ -1,4 +1,4 @@
-function PokeCard({img, likes, name}){
+export const PokeCard = ({img, likes, name}) => {
     // const newObj = {
     //     me: "Shelby",
     //     dog: "Tiger Rose"
@@ -18,4 +18,3 @@ function PokeCard({img, likes, name}){
     )
   }
 
-  export default PokeCard

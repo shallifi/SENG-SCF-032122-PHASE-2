@@ -1,4 +1,4 @@
-import PokeCard from './PokeCard'
+import { PokeCard } from './PokeCard'
 
 function App() {
   // console.log(<ChildComponent />)
