@@ -1,1 +1,3 @@
 # SENG-SCF-032122-PHASE-2
+
+For Phase 2 we are going to try using these materials a little bit differently. These are just yours to fork and clone for reference. If you want to alter the materials in any way and push to your forked repo, just make sure you `git add .` and `git commit -m "insert message here"`. (Alternatively you can add and commit in one command. Git workflow would make a good blog topic, doncha think?) Then  `git pull --rebase` (you shouldn't strictly need to reference origin main because unless you are branching, your system should theoretically know that you are pushing to the main branch), and finally `git push`. Of course don't forget that in your forked repo you need to select "Fetch upstream / Fetch and merge" to retrieve the latest updates.
