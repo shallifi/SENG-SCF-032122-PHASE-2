@@ -6,7 +6,13 @@ function ProductList({products}) {
     // filter my products array by category. i am going to render one ProductListItem per category that matches the appropriate category
 
     function filterProducts(category){
-        return products.filter(product => product.type === category).map(filteredProd => <ProductListItem key={filteredProd.id} filteredProd={filteredProd}/>)
+        const ListItems = products.filter(product => product.type === category).map(filteredProd => <ProductListItem key={filteredProd.id} filteredProd={filteredProd}/>)
+        return (
+            <>
+            <Category category={category}/>
+            {ListItems}
+            </>
+            )
     }
 
     // console.log(filterProducts("Sporting Goods"))
@@ -14,10 +20,9 @@ function ProductList({products}) {
 
   return (
       <>
-      <Category category="Sporting Goods"/>
+      
       {/* this is where the Sporting Goods ProductListItems will go */}
-     {filterProducts("Sporting Goods")}
-      <Category category="Electronics"/>
+      {filterProducts("Sporting Goods")}
       {/* this is where the Electronics ProductListItems will go */}
       {filterProducts("Electronics")}
       </>
