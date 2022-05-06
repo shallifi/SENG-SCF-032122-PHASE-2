@@ -1,11 +1,17 @@
-
+import { useState } from 'react';
 
 function ProjectListItem({name, image, about, link, phase}) {
+
+  const [counter, setCounter] = useState(0)
+
+  function handleClick() {
+    setCounter((counter) => counter + 1)
+  }
     return (
         <li className="card">
           <div className="image">
             <img src={image} alt={name} />
-            <button className="claps">👏 0</button>
+            <button onClick={handleClick} className="claps">👏{counter} </button>
           </div>
           <div className="details">
             <h4>{name}</h4>

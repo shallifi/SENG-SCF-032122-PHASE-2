@@ -46,6 +46,12 @@ section {
   align-items: center;
 }
 /* buttons */
+
+.fetch-btn {
+  display: block;
+  margin: 0 auto;
+}
+
 button {
   padding: 0.5rem 0.75rem;
   border: none;
