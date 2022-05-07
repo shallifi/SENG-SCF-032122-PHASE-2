@@ -1,11 +1,11 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
-function Header() {
-    const [mode, setMode] = useState(true)
+function Header({mode, toggleDark}) {
+    
 
-    function handleClick() {
-        setMode((mode) => !mode)
-    }
+    // function handleClick() {
+    //     setMode((mode) => !mode)
+    // }
 
     return (
         <header>
@@ -13,7 +13,7 @@ function Header() {
           <span className="logo">{"//"}</span>
             Project Showcase
           </h1>
-          <button onClick={handleClick}>
+          <button onClick={toggleDark}>
             {mode ? 'Dark' : 'Light'} Mode
           </button>
         </header>
