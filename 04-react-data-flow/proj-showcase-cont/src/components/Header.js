@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 
-function Header({mode, toggleDark}) {
+function Header({mode, toggleDark, handleUpdate}) {
     
 
     // function handleClick() {
@@ -13,6 +13,7 @@ function Header({mode, toggleDark}) {
           <span className="logo">{"//"}</span>
             Project Showcase
           </h1>
+          <button onClick={handleUpdate}>Click Me to Increment Num</button>
           <button onClick={toggleDark}>
             {mode ? 'Dark' : 'Light'} Mode
           </button>
