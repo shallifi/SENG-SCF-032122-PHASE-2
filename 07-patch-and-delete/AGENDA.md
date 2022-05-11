@@ -4,12 +4,10 @@ Agenda for Tonight (which is now also in Slack):
 
 7-7:10 - BREAK
 
-7:10pm-8:00 - Demo creating a PATCH and DELETE request 
+7:10pm-8:00 - Demo creating a PATCH request and updating local state 
 
 8-8:10 - BREAK 
 
-8:10-9 - Refactor project showcase to fetch data with useEffect
+8:10-9 - Demo creating a DELETE request and remove object from local state 
 
 HW for after lecture: 
-Side Effects and Data Fetching
-- Putting it All Together: React Fetch CRUD lab
