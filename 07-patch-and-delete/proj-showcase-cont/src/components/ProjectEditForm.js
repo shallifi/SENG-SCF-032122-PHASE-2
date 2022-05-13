@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function ProjectForm({ addProject }) {
+function ProjectEditForm({projectId, onUpdate}) {
   const [formData, setFormData] = useState({
     name: "",
     about: "",
@@ -8,7 +8,15 @@ function ProjectForm({ addProject }) {
     link: "",
     image: "",
   });
-  
+
+
+  // dependency arrays 
+  useEffect(() => {
+    fetch(`http://localhost:4000/projects/${projectId}`)
+    .then(resp => resp.json())
+    .then(project => setFormData(project))
+  }, [projectId])
+
   function handleChange(e) {
     setFormData((formData) => ({
       ...formData,
@@ -16,30 +24,31 @@ function ProjectForm({ addProject }) {
     }));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const configObj = {
-      method: "POST",
+  // runs after we submit the edit form
+  // what type of request should be made? PATCH
+  // two parts: we need to update the server, and need to update our local state(projects)
+  function handleEdit(e){
+    e.preventDefault()
+    console.log('button clicked')
+    fetch(`http://localhost:4000/projects/${projectId}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(formData),
-    };
+        "Accepts": "application/json"
+      }, 
+      body: JSON.stringify(formData)
+    })
+    .then(resp => resp.json())
+    .then(updatedProject => {
+      onUpdate(updatedProject)
+    })
 
-    fetch("http://localhost:5000/projects/", configObj)
-      .then((resp) => resp.json())
-      .then((data) => {
-        addProject(data);
-        setFormData({ name: "", about: "", phase: "", link: "", image: "" });
-      });
   }
 
   return (
     <section>
-      <form className="form" autoComplete="off" onSubmit={handleSubmit}>
-        <h3>Add New Project</h3>
+      <form className="form" autoComplete="off" onSubmit={handleEdit}>
+        <h3>Edit Project</h3>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -91,4 +100,4 @@ function ProjectForm({ addProject }) {
   );
 }
 
-export default ProjectForm;
+export default ProjectEditForm;

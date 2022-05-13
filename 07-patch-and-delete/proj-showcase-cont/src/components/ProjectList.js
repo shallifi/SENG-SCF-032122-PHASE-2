@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 
-function ProjectList({ projects }) {
+function ProjectList({ projects, editMode, onDelete }) {
   const [searchIt, setSearchIt] = useState("");
   function handleSearch(e) {
     setSearchIt(e.target.value);
@@ -11,7 +11,7 @@ function ProjectList({ projects }) {
   );
 
   const renderProjectItems = filteredProjects.map((project) => (
-    <ProjectListItem key={project.id} {...project} />
+    <ProjectListItem key={project.id} {...project} editMode={editMode} onDelete={onDelete}/>
   ));
 
   return (
