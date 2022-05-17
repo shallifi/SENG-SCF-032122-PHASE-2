@@ -13,12 +13,12 @@ function App() {
   // const [num, setNum] = useState(0)
   
   useEffect(()=>{
-    console.log('useEffect 1')
+    // console.log('useEffect 1')
    fetchData()
   },[])
   
   useEffect(()=> {
-    console.log(mode)
+    // console.log(mode)
   },[mode])
 
 
@@ -36,18 +36,21 @@ function App() {
     }
   }
 
-  function otherFetch() {
-    fetch('http://localhost:5000/projects/')
-    .then(response => response.json())
-    .then(data => setProjects(data))
-  }
+  // function otherFetch() {
+  //   fetch('http://localhost:5000/projects/')
+  //   .then(response => response.json())
+  //   .then(data => setProjects(data))
+  // }
 
   function toggleDark() {
     setMode(mode => !mode)
   }
 
   function toggleForm(){
-    setHide(prevState => !prevState)
+    setHide(prevState => {
+      console.log(prevState)
+      return !prevState
+    })
   }
 
   // Post-lecture Note: 
@@ -55,6 +58,7 @@ function App() {
   // However many students were missing it in their code so we covered it again.
   // The purpose of this example was to highlight the benefit of passing the state setter function a callback.
   // Props passing handleHandle update were removed from header to avoid errors with this commented out.
+  
   // function handleUpdate() {
   //   setNum(prevNum => prevNum + 50)
   //   setNum(prevNum => prevNum + 50)
