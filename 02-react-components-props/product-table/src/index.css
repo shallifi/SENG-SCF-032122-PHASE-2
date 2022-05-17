@@ -1,0 +1,8 @@
+body {
+  box-sizing: border-box;
+  background: rgb(206, 205, 240);
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+}
