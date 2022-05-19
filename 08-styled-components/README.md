@@ -4,9 +4,9 @@ nvm ls => shows all versions including current version
 
 node -v => current version
 
-nvm i 16.14.10 => installs the version we want for our purposes (you'll only need to install once)
+nvm i 16.14.0 => installs the version we want for our purposes (you'll only need to install once)
 
-nvm use 16.14.10 => switches to the installed version but doesn't make it default. if you want this to be the default version for you, the command is in the following blog post:
+nvm use 16.14.0 => switches to the installed version but doesn't make it default. if you want this to be the default version for you, the command is in the following blog post:
 
 [Helpful Tips For Using Node/NVM](https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b)
 

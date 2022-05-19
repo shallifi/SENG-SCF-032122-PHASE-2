@@ -14,19 +14,29 @@ const UnorderedList = styled.ul`
 // ✅ use the isEven prop in this component to change the background color for even rows!
 const ListItem = styled.li`
   padding: 4px 16px;
-  background: deeppink;
+  background: ${props => {
+    // console.log(props.key)
+    return props.isEven && "green"}};
 `;
 
-const items = ["Check", "Out", "This", "Great", "List"];
+// const items = ["Check", "Out", "This", "Great", "List"];
 
-export default function List() {
+const items = [];
+for (let i = 1; i < 100; i++) {
+  items.push(i);
+}
+
+
+function List() {
   return (
     <UnorderedList>
-      {items.map((item, index) => (
-        <ListItem key={item} isEven={(index + 1) % 2 === 0}>
+      {items.map((item, i) => (
+        <ListItem key={item} isEven={(i + 1) % 2 === 0}>
           {item}
         </ListItem>
       ))}
     </UnorderedList>
   );
 }
+
+export default List
