@@ -19,3 +19,6 @@
 - Use Switch and Route to set up initial routes
 - Use NavLink and Router props to implement show page
 - Use history.push() to navigate to show page after POST request
+
+## Resources
+[Awesome Router Cheatsheet](https://www.freecodecamp.org/news/react-router-cheatsheet/)
