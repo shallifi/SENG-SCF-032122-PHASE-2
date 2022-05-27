@@ -18,6 +18,10 @@
   --primary: var(--turquoise);
 }
 
+.nav-link, .pencil-link{
+  border-bottom: none;
+}
+
 /* layout */
 * {
   padding: 0;

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 
 const ProjectForm = ({ onAddProject }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,8 @@ const ProjectForm = ({ onAddProject }) => {
     link: "",
     image: "",
   });
+
+  const history = useHistory()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +41,10 @@ const ProjectForm = ({ onAddProject }) => {
           image: "",
         });
       });
+      //// push my user to projects
+      history.push(`/projects`)
+      
+
   };
 
   return (

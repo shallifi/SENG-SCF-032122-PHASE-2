@@ -6,6 +6,7 @@ import ProjectList from "./components/ProjectList";
 import ProjectEditForm from "./components/ProjectEditForm";
 import ProjectDetail from "./components/ProjectDetail";
 import Home from "./components/Home";
+import { Route,Switch} from "react-router-dom";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -53,30 +54,42 @@ const App = () => {
     setProjects(updatedProjects);
   };
 
-  const renderForm = () => {
-    if (projectId) {
-      return (
-        <ProjectEditForm
-          projectId={projectId}
-          onUpdateProject={onUpdateProject}
-        />
-      );
-    } else {
-      return <ProjectForm onAddProject={onAddProject} />;
-    }
-  };
+  // const renderForm = () => {
+  //   if (projectId) {
+  //     return (
+     
+  // };
 
   return (
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
-      <Home />
-      {renderForm()}
-      <ProjectList
-        projects={projects}
-        enterProjectEditModeFor={enterProjectEditModeFor}
-        onDeleteProject={onDeleteProject}
-      />
-      <ProjectDetail />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      {/* {renderForm()} */}
+        <Route path="/projects/:id/edit">
+          <ProjectEditForm onUpdateProject={onUpdateProject}
+            />
+          </Route>
+
+        <Route path="/projects/new">
+          <ProjectForm onAddProject={onAddProject} />;
+        </Route>
+      <Route path="/projects/:id">
+        <ProjectDetail />
+      </Route>
+        
+        <Route path="/projects"> 
+          <ProjectList
+            projects={projects}
+            enterProjectEditModeFor={enterProjectEditModeFor}
+            onDeleteProject={onDeleteProject}
+          />
+        </Route>
+
+
+      </Switch>
     </div>
   );
 };

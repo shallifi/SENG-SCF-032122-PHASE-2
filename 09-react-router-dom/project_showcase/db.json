@@ -1,17 +1,8 @@
 {
   "projects": [
     {
-      "id": 1,
-      "name": "Great Outdoors Guide",
-      "about": "Plan your next adventure to in the U.S. National Parks!",
-      "phase": 4,
-      "link": "https://great-outdoors-guide.netlify.app",
-      "image": "https://i.imgur.com/8GnP2Uw.png",
-      "claps": 0
-    },
-    {
       "id": 2,
-      "name": "Book Her",
+      "name": "Book Her  PLease",
       "about": "The app takes you (the Casting Director) through a series of questions to determine the Models you need for your next Project.",
       "phase": 4,
       "link": "https://bookher.netlify.app/new_project",
@@ -20,7 +11,7 @@
     },
     {
       "id": 3,
-      "name": "Code Bucket #3",
+      "name": "Code Bucket #3 try again",
       "about": "Web-based CSS, JS and HTML Editor",
       "phase": 4,
       "link": "https://code-bucket.netlify.app",
@@ -29,7 +20,7 @@
     },
     {
       "id": 11,
-      "name": "Yourseum",
+      "name": "Yourseum, what is this anme",
       "about": "Find great art",
       "phase": 4,
       "link": "https://yourseum.netlify.app",
@@ -98,6 +89,24 @@
       "link": "https://gamesrx.netlify.app",
       "image": "https://i.imgur.com/Japzh6v.png",
       "claps": 0
+    },
+    {
+      "name": "trying",
+      "about": "htis should ",
+      "phase": "3",
+      "link": "https://www.reddit.com/r/dndnext/comments/k27olt/zoom_backgrounds/",
+      "image": "sf",
+      "claps": 0,
+      "id": 26
+    },
+    {
+      "name": "SFD",
+      "about": "SFFF",
+      "phase": "1",
+      "link": "FFA",
+      "image": "ASD",
+      "claps": 0,
+      "id": 27
     }
   ]
 }
